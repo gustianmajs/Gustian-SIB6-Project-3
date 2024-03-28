@@ -22,7 +22,9 @@ def get_conn(conf, name_conn):
         )
         print(f'Connected {name_conn} successfully!')
         engine = create_engine(
-            f"postgresql+psycopg2://{conf['user']}:{conf['password']}@{conf['host']}:{conf['port']}/{conf['db']}")
+            f"postgresql+psycopg2://{conf['user']}:{conf['password']}@"
+            f"{conf['host']}:{conf['port']}/{conf['db']}"
+        )
         return conn, engine
     except Exception as e:
         print(f'{name_conn} connection failed:')
